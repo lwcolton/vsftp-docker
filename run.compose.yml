@@ -4,16 +4,9 @@ data:
 		- /opt/ftp_data
 	command: /bin/sh -c "while true; do sleep 10000; done"
 
-config:
-	image: busybox
-	volumes:
-		- /etc/vsftpd/:/etc/vsftpd
-	command: /bin/sh -c "while true; do sleep 10000; done"
-
 server:
-	image: vsftpd
+	build: .
 	ports:
 		- "21:21"
 	volumes_from:
 		- data
-		- config
