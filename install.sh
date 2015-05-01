@@ -8,9 +8,13 @@ if [ -z "$SUDO_USER" ]; then
 	exit 1
 fi
 
-apt-get update && apt-get -y install curl python3 realpath pushd
+apt-get update && apt-get -y install curl python3 realpath
 
-curl -L https://get.docker.com | /bin/sh
+if which docker > /dev/null; then
+	echo "Docker exists, skipping"
+else
+	curl -L https://get.docker.com | /bin/sh
+fi
 
 script_location=`realpath $0`
 

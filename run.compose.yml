@@ -1,12 +1,12 @@
 data:
-	image: busybox
-	volumes:
-		- /opt/ftp_data
-	command: /bin/sh -c "while true; do sleep 10000; done"
+    image: busybox
+    volumes:
+        - /opt/ftp_data
+    command: /bin/sh -c "while true; do sleep 10000; done"
 
 server:
-	build: .
-	ports:
-		- "21:21"
-	volumes_from:
-		- data
+    build: .
+    ports:
+        - "21:21"
+    volumes_from:
+        - data
