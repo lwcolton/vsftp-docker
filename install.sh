@@ -30,4 +30,4 @@ mkdir -p /var/ftp/uploads
 useradd -s /usr/sbin/nologin -d /var/ftp -u 9000 ftp
 chown -R ftp:root /var/ftp
 chmod -R 770 /var/ftp
-chmod go-w /var/ftp
+chmod ugo-w /var/ftp
