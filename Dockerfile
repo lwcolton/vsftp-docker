@@ -8,7 +8,7 @@ RUN mkdir /usr/local/man/man8 /usr/local/man/man5 /usr/share/empty /var/ftp
 
 RUN cd /root/vsftpd-3.0.2 && make && make install
 
-RUN useradd -d /var/ftp ftp && chown root:root /var/ftp && chmod og-w /var/ftp
+RUN useradd -d /var/ftp ftp && chown ftp:root /var/ftp && chmod og+rwx /var/ftp
 
 COPY /vsftpd.conf /etc/vsftpd.conf
 
